@@ -1,0 +1,10 @@
+<h1>Categories page</h1>
+{{input value=categoryName placeholder='Category name'}}
+{{#if categoryName}}
+  <p>Uppercase category name: {{uppercaseCategoryName}}</p>
+  {{else}}
+  <p>
+    Please write something here
+  </p>
+{{/if}}
+<button type="button" name="saveButton" disabled={{isDisabled}}>Save</button>
