@@ -1,10 +1,17 @@
 <h1>Categories page</h1>
+<button type="button" name="button" {{action 'myNewAction'}}>+1</button>
 {{input value=categoryName placeholder='Category name'}}
-{{#if categoryName}}
+{{!-- {{#if categoryName}}
   <p>Uppercase category name: {{uppercaseCategoryName}}</p>
   {{else}}
   <p>
     Please write something here
   </p>
-{{/if}}
-<button type="button" name="saveButton" disabled={{isDisabled}}>Save</button>
+{{/if}} --}}
+<button type="button" name="saveButton" disabled={{isDisabled}} {{action 'addNewCategory' categoryName}}>Save</button>
+
+<ul>
+  {{#each categoryList as |cat index|}}
+    <li>{{cat}}</li><button type="button" name="removeButton" {{action 'removeCategory' index}}>-</button>
+  {{/each}}
+</ul>
